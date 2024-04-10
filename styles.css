@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  background-color: Gainsboro;
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  margin-top: 50px;
+  font-weight: 700;
+}
+
+.centralizado {
+  display: flex;
+  justify-content: center;
+}
+
+.certificados {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10%;
+  gap: 30px;
+}
+
+.certificado {
+  margin: 10px;
+  cursor: pointer;
+  text-align: center; /* Centraliza o texto */
+  position: relative; /* Permite posicionamento absoluto do título */
+}
+
+.certificado span {
+  display: block;
+  font-size: 16px;
+  margin-top: 8px;
+  font-weight: bold; /* Deixa o texto em negrito */
+  color: #333; /* Cor do texto */
+}
+
+.certificado::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Posiciona o elemento abaixo do bloco */
+  left: 50%; /* Posiciona o elemento na metade da largura do bloco */
+  width: 30%; /* Largura do elemento */
+  height: 2px; /* Altura do elemento */
+  background-color: #007bff; /* Cor do elemento */
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  transition: width 0.3s ease; /* Transição suave */
+  opacity: 0; /* Oculta inicialmente */
+}
+
+.certificado:hover::after {
+  width: 100%; /* Aumenta a largura ao passar o mouse */
+  opacity: 1; /* Torna o elemento visível */
+}
+
+.certificado img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.certificado img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo para o modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-conteudo {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 800px;
+  max-height: 80%;
+}
+
+.fechar {
+  color: white;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
